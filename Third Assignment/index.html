@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Examining the Price Development of the BMW Share</title>
+  <title>Share Price Development of the BMW AG</title>
   <meta charset="utf-8">
-  <meta name="description" content="Examining the Price Development of the BMW Share">
-  <meta name="author" content="Ramon Roales-Welsch">
+  <meta name="description" content="Share Price Development of the BMW AG">
+  <meta name="author" content="Ramón Roales-Welsch">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
     media="only screen and (max-device-width: 480px)" >
-  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
-  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
-  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
-    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
   
   
@@ -32,9 +32,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Examining the Price Development of the BMW Share</h1>
-    <h2>Third Assignment of the Developing Data Products Course (29th of July, 2017)</h2>
-    <p>Ramon Roales-Welsch<br/></p>
+    <h1>Share Price Development of the BMW AG</h1>
+    <h2>Third Assignment of the Developing Data Products Course (30th of July, 2017)</h2>
+    <p>Ramón Roales-Welsch<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,7 +43,7 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>What does my application do?</h2>
   </hgroup>
   <article data-timings="">
     <ol>
@@ -58,30 +58,53 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Show the BMW dataset</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">library(readr)
+bmw &lt;- read_csv(url(&quot;https://raw.githubusercontent.com/Hauer-Glocke/third_assignment_data_products/master/my_first_app/BMW.DE.csv&quot;))
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 3</h2>
+    <h2>Adjustments of the dataset</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">bmw &lt;- bmw[c(1,5)]
+bmw$Close &lt;- as.numeric(bmw$Close)
+</code></pre>
+
+<pre><code>## Warning: NAs durch Umwandlung erzeugt
+</code></pre>
+
+<pre><code class="r">bmw &lt;- bmw[!is.na(bmw$Close),]
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 4</h2>
+    <h2>Plot Function</h2>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">#minDate &lt;- input$Date[1]
+#maxDate &lt;- input$Date[2]
+#period &lt;- bmw$Date[minDate:maxDate]
+#temp &lt;- bmw[bmw$Date %in% period,]
+#plot(x = temp$Date, 
+#     y = temp$Close,
+#     type = &quot;l&quot;,
+#     xlab = &quot;Date&quot;,
+#     ylab = &quot;Price BMW Share&quot;,
+#     main = &quot;BMW Share Price Development&quot;)
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -92,25 +115,25 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='What does my application do?'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Show the BMW dataset'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Slide 3'>
+        data-slide=3 title='Adjustments of the dataset'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Slide 4'>
+        data-slide=4 title='Plot Function'>
          4
       </a>
     </li>
@@ -125,7 +148,7 @@
   <!-- Load Javascripts for Widgets -->
   
   <!-- LOAD HIGHLIGHTER JS FILES -->
-  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
    

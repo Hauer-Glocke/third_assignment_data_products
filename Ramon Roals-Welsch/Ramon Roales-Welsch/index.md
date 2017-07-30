@@ -1,13 +1,13 @@
 ---
-title       : Examining the Price Development of the BMW Share
-subtitle    : Third Assignment of the Developing Data Products Course (29th of July, 2017)
+title       : Share Price Development of the BMW AG
+subtitle    : Third Assignment of the Developing Data Products Course (30th of July, 2017)
 author      : Ramon Roales-Welsch
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
-mode        : standalone # {standalone, draft}
+mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
@@ -26,4 +26,7 @@ knit        : slidify::knit2slides
 
 --- .class #id 
 ## Slide 4
+
+
+
 
